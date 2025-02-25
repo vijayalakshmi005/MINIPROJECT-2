@@ -1,0 +1,41 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; 
+}
+
+.container {
+    
+    margin: 0 auto;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.button {
+    background-color: #3498db; /* Base background color */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for background and transform */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.button:hover {
+    background-color: #2980b9; /* Darker background on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.button:active {
+    transform: translateY(0); /* Reset lift effect when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect when active */
+}

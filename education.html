@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Resources</title>
+    <link rel="stylesheet" href="education.css">
+</head>
+<body>
+    <header>
+        <h1>Educational Resources</h1>
+        <nav>
+            <ul>
+                <li><a href="mini3.html" aria-label="Go to Home">Home</a></li>
+                <li><a href="feedback.html" aria-label="Provide Feedback">Feedback</a></li>
+                <li><a href="news.html" aria-label="Read Latest News">News</a></li>
+                <li><a href="matches.html" aria-label="View Live Matches">Live Matches</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Educational Resources</h2>
+            <ul>
+                <li><a href="link-to-article1.html" aria-label="Understanding the Basics of HTML">Understanding the Basics of HTML</a></li>
+                <li><a href="link-to-video1.html" aria-label="Video Tutorial: CSS for Beginners">Video Tutorial: CSS for Beginners</a></li>
+                <li><a href="link-to-tutorial1.html" aria-label="JavaScript Fundamentals">JavaScript Fundamentals</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Quick Quiz</h2>
+            <form id="quizForm" aria-labelledby="quizTitle">
+                <fieldset>
+                    <legend id="quizTitle">Test Your Knowledge</legend>
+                    <label for="q1">1. What does HTML stand for?</label><br>
+                    <input type="radio" id="q1" name="q1" value="Hyper Text Markup Language" aria-label="Hyper Text Markup Language"> Hyper Text Markup Language<br>
+                    <input type="radio" id="q1" name="q1" value="High Text Markup Language" aria-label="High Text Markup Language"> High Text Markup Language<br>
+                    <button type="button" onclick="checkQuiz()">Submit</button>
+                </fieldset>
+            </form>
+            <div id="quizResult" role="alert"></div>
+        </section>
+
+        <section>
+            <h2>Discussion Forum</h2>
+            <textarea id="forumInput" placeholder="Ask a question or share your thoughts..." aria-label="Discussion input"></textarea>
+            <button onclick="postComment()" aria-label="Post your comment">Post</button>
+            <div id="forumComments" role="region" aria-live="polite"></div>
+        </section>
+
+        <section>
+            <h2>Feedback</h2>
+            <form id="feedbackForm" aria-labelledby="feedbackTitle">
+                <fieldset>
+                    <legend id="feedbackTitle">Your Feedback</legend>
+                    <textarea placeholder="Your feedback..." aria-label="Feedback input"></textarea>
+                    <button type="submit" aria-label="Submit Feedback">Submit Feedback</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <a class="main" href="main.html">HOME</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Educational Resources. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function checkQuiz() {
+            const resultDiv = document.getElementById('quizResult');
+            const answer = document.querySelector('input[name="q1"]:checked');
+            if (answer && answer.value === "Hyper Text Markup Language") {
+                resultDiv.innerHTML = "Correct!";
+            } else {
+                resultDiv.innerHTML = "Try again!";
+            }
+        }
+
+        function postComment() {
+            const comment = document.getElementById('forumInput').value;
+            const commentsDiv = document.getElementById('forumComments');
+            if (comment.trim() === "") {
+                alert("Please enter a comment before posting.");
+                return;
+            }
+            commentsDiv.innerHTML += `<p>${comment}</p>`;
+            document.getElementById('forumInput').value = ''; // Clear the textarea
+        }
+    </script>
+</body>
+</html>

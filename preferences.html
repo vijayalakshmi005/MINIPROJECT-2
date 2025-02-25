@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Preferences</title>
+    <link rel="stylesheet" href="preferences.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Accessibility Setup</h2>
+        <p>Please select your preferred way to receive instructions:</p>
+        <div class="preferences">
+            <button class="button" id="text-preference" onclick="setPreference('text')">Text Instructions</button>
+            <button class="button" id="audio-preference" onclick="setPreference('audio')">Audio Instructions</button>
+        </div>
+        <div id="instruction-prompt" style="display: none;">
+            <p>Please click the highlighted area below:</p>
+            <button id="target-button" onclick="completeTask()" style="visibility: hidden;">Click Me</button>
+        </div>
+        <div id="feedback" style="display: none;">
+            <p>Thank you! Based on your responses, we will adjust the interface to better suit your needs.</p>
+            <button id="proceed-button" onclick="proceedToNextPage()" disabled>Proceed</button>
+        </div>
+    </div>
+    <script src="preferences.js"></script>
+</body>
+</html>
